@@ -1,0 +1,6 @@
+[submodule "Unity"]
+	path = Unity
+	url = https://github.com/ThrowTheSwitch/Unity
+[submodule "commonsw"]
+	path = commonsw
+	url = https://github.com/caltech-fsae/commonsw

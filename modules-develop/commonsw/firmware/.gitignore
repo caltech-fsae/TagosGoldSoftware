@@ -1,0 +1,20 @@
+# Ignore compiled files and runtime files
+
+DebugConfig
+Listings
+Objects
+RTE
+
+*.o
+*.crf
+*.d
+*.lst
+*.map
+*.dep
+*.lnp
+*.axf
+*.htm
+*.uvguix.*
+*.iex
+
+.DS_Store

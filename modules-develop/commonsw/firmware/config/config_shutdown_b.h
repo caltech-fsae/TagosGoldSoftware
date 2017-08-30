@@ -1,0 +1,62 @@
+
+#ifndef CONFIG_SHUTDOWN_B
+#define CONFIG_SHUTDOWN_B
+
+#if !defined(STM32F407xx)
+    #error "Compile for STM32F407xx."
+#endif
+#if ( HSE_VALUE != 20000000 )   /* HSE * PLLN / PLLM = 160000000 */
+    #error "Define HSE_VALUE=20000000 in the target settings."
+#endif
+#define PLLM_VALUE          16
+#define PLLN_VALUE          256
+
+#define ADDRESS_SELF ADDRESS_SHUTDOWN
+
+/*
+ * Board-specific Pin Map
+ */
+
+/* FAULT IO Pins */
+#define FAULT_IO_GPIO_PIN     GPIO_PIN_8
+#define FAULT_IO_GPIO_GROUP   GPIOD
+#define FAULTN_IO_GPIO_PIN    GPIO_PIN_9
+#define FAULTN_IO_GPIO_GROUP  GPIOD
+
+/* FAULT Pins */
+#define FAULT_GPIO_PIN     GPIO_PIN_0
+#define FAULT_GPIO_GROUP   GPIOD
+#define FAULTN_GPIO_PIN    GPIO_PIN_1
+#define FAULTN_GPIO_GROUP  GPIOD
+
+/* Relay pins */
+#define DCHG_GPIO_PIN    GPIO_PIN_7
+#define DCHG_GPIO_GROUP  GPIOC
+#define PCHG_GPIO_PIN    GPIO_PIN_6
+#define PCHG_GPIO_GROUP  GPIOC
+#define AIR1H_GPIO_PIN   GPIO_PIN_9
+#define AIR1H_GPIO_GROUP GPIOE
+#define AIR1L_GPIO_PIN   GPIO_PIN_1
+#define AIR1L_GPIO_GROUP GPIOC
+#define AIR2H_GPIO_PIN   GPIO_PIN_2
+#define AIR2H_GPIO_GROUP GPIOC
+#define AIR2L_GPIO_PIN   GPIO_PIN_3
+#define AIR2L_GPIO_GROUP GPIOC
+#define AIR3H_GPIO_PIN   GPIO_PIN_4
+#define AIR3H_GPIO_GROUP GPIOC
+#define AIR3L_GPIO_PIN   GPIO_PIN_5
+#define AIR3L_GPIO_GROUP GPIOC
+
+/* CAN */
+#define CAN1_GPIO_PINS (GPIO_PIN_8 | GPIO_PIN_9)
+#define CAN1_GPIO_GROUP (GPIOB)
+#define CAN2_GPIO_PINS (GPIO_PIN_12 | GPIO_PIN_13)
+#define CAN2_GPIO_GROUP (GPIOB)
+
+
+#define KILL_NONRESETTABLE_GPIO_PIN   TODO
+#define KILL_NONRESETTABLE_GPIO_GROUP TODO
+#define KILL_RESETTABLE_GPIO_PIN      TODO
+#define KILL_RESETTABLE_GPIO_GROUP    TODO
+
+#endif // CONFIG_SHUTDOWN_B

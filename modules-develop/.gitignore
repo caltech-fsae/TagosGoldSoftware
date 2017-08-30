@@ -1,0 +1,9 @@
+*.uvguix.*
+DebugConfig
+Listings
+Objects
+*/RTE/*
+!*/RTE/CMSIS
+
+*/RTE/CMSIS/*
+!*/RTE/CMSIS/RTX_Conf_CM.c
